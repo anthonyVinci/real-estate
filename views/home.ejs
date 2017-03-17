@@ -2,14 +2,40 @@
 <html>
 
 <head>
-    <title>Home</title>
+    <title>Comparateur</title>
     <link rel="stylesheet" href="/assets/css/style.css" />
+    <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/node_modules/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
 </head>
 
+
 <body>
-    <p>Welcome to
-        <%= message %>
-    </p>
+    <div class="header">
+        Comparateur de prix immobilier
+    </div>
+
+    <div class="container">
+        <h2>Veuillez saisir l'URL de l'annonce:</h2>
+        <form action="/" method="GET">
+            <input type="text" name="urlLBC" />
+            <button type="submit" class="btn btn-primary">OK</button>
+        </form>
+
+        <p>
+            <h2>Propiétés du bien:</h2>
+
+            <%= "Le prix est de " + prix + " euros." %><br>
+                <%= "Type du bien immobilier: " + type %><br>
+                    <%= "La surface est de " + surface + " m²." %><br>
+                        <%= "Le bien se trouve à " + ville + ", " + cp %><br>
+                            <%= "Le prix au m² est de " + prixAuMetreCarre + " euros." %><br>
+
+                                <h2>Résultat du de la comparaison:<br></h2>
+                                <%= message %>
+
+        </p>
+    </div>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
